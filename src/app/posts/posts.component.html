@@ -1,0 +1,20 @@
+<div class="center">
+    <h1>Rohit's learning </h1>
+    <!-- Ngrx Signal state -->
+    <!-- <h4>Total posts : {{postsCount()}}</h4>
+    <form [formGroup]="addForm" (ngSubmit)="onAdd()">
+        <input type="text" placeholder="Add..." formControlName="title"/>
+    </form>
+    <div *ngIf="state.isLoading()">Loading...</div>
+    <div *ngIf="state.error()">{{state.error()}}</div>
+    <div *ngFor="let post of state.posts()">{{post.title}} <span (click)="removePost(post.id)">X</span></div> -->
+
+    <!-- Ngrx Signal store  -->
+    <div>Total : {{store.postsCount() }}</div>
+    <form [formGroup]="addForm" (ngSubmit)="onAdd()">
+        <input type="text" placeholder="Add..." formControlName="title"/>
+    </form>
+    <div *ngIf="store.isLoading()">Loading...</div>
+    <div *ngIf="store.error()">{{store.error()}}</div>
+    <div *ngFor="let post of store.posts()">{{post.title}} <span (click)="store.removePost(post.id)">X</span></div>
+</div>
